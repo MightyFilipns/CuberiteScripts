@@ -36,7 +36,7 @@ namespace CuberiteScripts
             //block_state_printer.BlockStateType("E:\\minecraft-servers\\server-1-21\\generated\\reports\\blocks.json");
             //ItemConverterGenerator.IdToItemConvGen("E:\\minecraft-servers\\server-1-21\\generated\\reports\\registries.json");
             //ItemConverterGenerator.ItemToIdConvGen("E:\\minecraft-servers\\server-1-21\\generated\\reports\\registries.json");
-            PaletteGenerator.GeneratePalette("E:\\minecraft-servers\\server-1-21\\generated\\reports\\blocks.json", "E:\\minecraft-servers\\server-1-21\\generated\\reports\\blocks.json");
+            //PaletteGenerator.GeneratePalette("E:\\minecraft-servers\\server-1-21\\generated\\reports\\blocks.json", "E:\\minecraft-servers\\server-1-21\\generated\\reports\\blocks.json");
             //NamespaceSerializerGen.GenerateItemToString("E:\\minecraft-servers\\server-1-21\\generated\\reports\\registries.json");
             //NamespaceSerializerGen.GenerateStringToItemMap("E:\\minecraft-servers\\server-1-21\\generated\\reports\\registries.json");
             //NamespaceSerializerGen.GenerateBlockToString("E:\\minecraft-servers\\server-1-21\\generated\\reports\\blocks.json");
@@ -50,6 +50,12 @@ namespace CuberiteScripts
             //PaletteGenerator.GenerateCustomStats("E:\\minecraft-servers\\server-1-21\\generated\\reports\\registries.json");
             //Misc.ListItems("E:\\minecraft-servers\\server-1-21\\generated\\reports\\registries.json");
             //BlockTypeToBlockStateGen.Generate("E:\\minecraft-servers\\server-1-21\\generated\\reports\\blocks.json");
+            //HandlerGen.GenerateItemToHandler("E:\\minecraft-servers\\server-1-21\\generated\\reports\\registries.json");
+            //HandlerGen.GenerateItemHandlers("E:\\minecraft-servers\\server-1-21\\generated\\reports\\items.json", "E:\\minecraft-servers\\server-1-21\\generated\\reports\\blocks.json");
+            //HandlerGen.GenerateMaxStackSize("E:\\minecraft-servers\\server-1-21\\generated\\reports\\items.json");
+            //HandlerGen.GenerateBlockHandlers("E:\\minecraft-servers\\server-1-21\\generated\\reports\\blocks.json");
+            HandlerGen.GenerateBlockToHandler("E:\\minecraft-servers\\server-1-21\\generated\\reports\\blocks.json");
+
 
             //idtransform(old =>
             //{
