@@ -54,7 +54,8 @@ namespace CuberiteScripts
             //HandlerGen.GenerateItemHandlers("E:\\minecraft-servers\\server-1-21\\generated\\reports\\items.json", "E:\\minecraft-servers\\server-1-21\\generated\\reports\\blocks.json");
             //HandlerGen.GenerateMaxStackSize("E:\\minecraft-servers\\server-1-21\\generated\\reports\\items.json");
             //HandlerGen.GenerateBlockHandlers("E:\\minecraft-servers\\server-1-21\\generated\\reports\\blocks.json");
-            HandlerGen.GenerateBlockToHandler("E:\\minecraft-servers\\server-1-21\\generated\\reports\\blocks.json");
+            //HandlerGen.GenerateBlockToHandler("E:\\minecraft-servers\\server-1-21\\generated\\reports\\blocks.json");
+            Misc.GenSpawnEggs("E:\\minecraft-servers\\server-1-21\\generated\\reports\\registries.json");
 
 
             //idtransform(old =>

@@ -45,5 +45,16 @@ namespace CuberiteScripts
                 Console.WriteLine($"\t{item.name},");
             }
         }
+
+        public static void GenSpawnEggs(string file_path)
+        {
+            var eggs = Utils.GetItemsFromJsonRaw(file_path).Select(a => a.FormatNameNoPrefix())
+                .Where(a => a.Contains("SpawnEgg"));
+            int max = eggs.Max(a => a.Length);
+            foreach (var egg in eggs)
+            {
+                Console.WriteLine($"case Item::{egg}:{Utils.Spacing(max-egg.Length)} return mt{egg.Remove(egg.IndexOf("SpawnEgg"),"SpawnEgg".Length)};");   
+            }
+        }
     }
 }
