@@ -27,9 +27,9 @@ namespace CuberiteScripts
             //generateConvert();
             //extractmap();
             //waterlogfix2();
-            //GenerateRegistryDataWriter();
 
 
+            //GenerateRegistryDataWriter("E:\\minecraft-servers\\server-1-21-3\\generated\\data\\minecraft\\damage_type");
             //GenerateParticleMap();
             //block_state_printer.generateBlockStatesCPP("E:\\minecraft-servers\\server-1-21\\generated\\reports\\blocks.json");
             //block_state_printer.generateBlockStatesH("E:\\minecraft-servers\\server-1-21\\generated\\reports\\blocks.json");
@@ -55,21 +55,30 @@ namespace CuberiteScripts
             //HandlerGen.GenerateMaxStackSize("E:\\minecraft-servers\\server-1-21\\generated\\reports\\items.json");
             //HandlerGen.GenerateBlockHandlers("E:\\minecraft-servers\\server-1-21\\generated\\reports\\blocks.json");
             //HandlerGen.GenerateBlockToHandler("E:\\minecraft-servers\\server-1-21\\generated\\reports\\blocks.json");
-            Misc.GenSpawnEggs("E:\\minecraft-servers\\server-1-21\\generated\\reports\\registries.json");
+            //Misc.GenSpawnEggs("E:\\minecraft-servers\\server-1-21\\generated\\reports\\registries.json");
+            //PacketIdGen.GenPacketIds("E:\\minecraft-servers\\server-1-21-3\\generated\\reports\\packets.json","play","serverbound");
 
 
             //idtransform(old =>
             //{
             //    int toret = old;
-            //    if (old >= 6)
+            //    if (old >= 32)
             //    {
             //        toret++;
             //    }
-            //    if (old >= 17)
+            //    if (old >= 50)
             //    {
             //        toret++;
             //    }
-            //    if (old >= 18)
+            //    if (old >= 68)
+            //    {
+            //        toret += 3;
+            //    }
+            //    if (old >= 100)
+            //    {
+            //        toret ++;
+            //    }
+            //    if (old >= 103)
             //    {
             //        toret++;
             //    }
@@ -94,10 +103,10 @@ namespace CuberiteScripts
             }
         }
 
-        private static void GenerateRegistryDataWriter()
+        private static void GenerateRegistryDataWriter(string file_path)
         {
             string fileloc = "E:\\minecraft-servers\\server-1-21\\generated\\data\\minecraft\\damage_type";
-            DirectoryInfo di = new(fileloc);
+            DirectoryInfo di = new(file_path);
             foreach (var item in di.EnumerateFiles())
             {
                 Console.WriteLine($"Pkt.WriteString(\"{ item.Name.Substring(0, item.Name.IndexOf('.'))}\"); Pkt.WriteBool(false);");
