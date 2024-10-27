@@ -147,5 +147,29 @@ namespace CuberiteScripts
                 Utils.save($"\t\t\tcase CustomStatistic::{name}:{Utils.Spacing(max_name_len - name.Length)} return {protocol_id};");
             }
         }
+        /* Generates the complete palette cpp file so that it can be just copy-pasted */
+        public static void CompletePaletteFileGen(string target_version_blocks,string target_version_registry, string block_states_generated_using, string verion_name)
+        {
+            string formatted_version = verion_name.Replace(".", "_");
+            Utils.save("#include \"Globals.h\"");
+            Utils.save($"#include \"Palette_{formatted_version}.h\"");
+            Utils.save("#include \"Registries/BlockStates.h\"");
+            Utils.save("#include \"BlockType.h\"");
+            Utils.save($"namespace Palette_{formatted_version}\n{{");
+            Utils.save("\tUInt32 From(const BlockState Block)\r\n\t{\r\n\t\tusing namespace Block;\r\n\r\n\t\tswitch (Block.ID)\r\n\t\t{");
+            GeneratePalette(target_version_blocks, block_states_generated_using);
+            Utils.save("\t\t\tdefault: return 0;\r\n\t\t}\r\n\t}");
+            Utils.save("\tUInt32 From(const CustomStatistic ID)\r\n\t{\r\n\t\tswitch (ID)\r\n\t\t{");
+            GenerateCustomStats(target_version_registry);
+            Utils.save("\t\t\tdefault: return -1;\r\n\t\t}\r\n\t}");
+            Utils.save("\tItem ToItem(const UInt32 ID)\r\n\t{\r\n\t\tswitch (ID)\r\n\t\t{");
+            ItemConverterGenerator.IdToItemConvGen(target_version_registry);
+            Utils.save("\t\t}\r\n\t}");
+            Utils.save("\tUInt32 From(const Item ID)\r\n\t{\r\n\t\tswitch (ID)\r\n\t\t{");
+            ItemConverterGenerator.ItemToIdConvGen(target_version_registry);
+            Utils.save("\t\t\tdefault: return -1;\r\n\t\t}\r\n\t}");
+            Utils.save($"}}  // namespace Palette_{formatted_version}");
+            Utils.SaveToFile();
+        }
     }
 }

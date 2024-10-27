@@ -57,7 +57,12 @@ namespace CuberiteScripts
             //HandlerGen.GenerateBlockToHandler("E:\\minecraft-servers\\server-1-21\\generated\\reports\\blocks.json");
             //Misc.GenSpawnEggs("E:\\minecraft-servers\\server-1-21\\generated\\reports\\registries.json");
             //PacketIdGen.GenPacketIds("E:\\minecraft-servers\\server-1-21-3\\generated\\reports\\packets.json","play","serverbound");
-
+            //Commands.PrintCommandParsers("E:\\minecraft-servers\\server-1.18\\generated\\reports\\registries.json");
+            PaletteGenerator.CompletePaletteFileGen(
+                "E:\\minecraft-servers\\server-1-19\\generated\\reports\\blocks.json",
+                "E:\\minecraft-servers\\server-1-19\\generated\\reports\\registries.json",
+                "E:\\minecraft-servers\\server-1-21\\generated\\reports\\blocks.json",
+                "1.19");
 
             //idtransform(old =>
             //{
