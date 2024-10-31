@@ -56,5 +56,27 @@ namespace CuberiteScripts
                 Console.WriteLine($"case Item::{egg}:{Utils.Spacing(max-egg.Length)} return mt{egg.Remove(egg.IndexOf("SpawnEgg"),"SpawnEgg".Length)};");   
             }
         }
+
+        public static void GenBlockEntities(string file_path)
+        {
+            var blocks = Utils.GetBlockEntities(file_path);
+            int max = blocks.Max(a => a.name.Length);
+            foreach (var block in blocks)
+            {
+                Console.WriteLine($"case BlockType::{block.name}:{Utils.Spacing(max - block.name.Length)} Action = {block.protocol_id};");
+            }
+        }
+
+
+        public static void ListSounds(string data_path)
+        {
+            var sounds = Utils.GetSounds(data_path);
+            int max = sounds.Max(a => a.name.Length - "minecraft:".Length);
+            foreach (var (name, protocolId) in sounds)
+            {
+                string name_no_prefix = name.Remove(0, "minecraft:".Length);
+                Console.WriteLine($"{{ \"{name_no_prefix}\",{Utils.Spacing(max - name_no_prefix.Length)}{protocolId} }},");
+            }
+        }
     }
 }

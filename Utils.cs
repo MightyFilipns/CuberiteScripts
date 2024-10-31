@@ -45,6 +45,16 @@ namespace CuberiteScripts
             }).ToList().Aggregate((s1, s2) => s1 + s2);
         }
 
+        public static string FormatNameNoPrefixTag(this string name)
+        {
+            return name.Remove(0, "#minecraft:".Length).Split("_").Select(a =>
+            {
+                StringBuilder strb = new(a);
+                strb[0] = char.ToUpper(strb[0]);
+                return strb.ToString();
+            }).ToList().Aggregate((s1, s2) => s1 + s2);
+        }
+
         public static string RemovePrefix(this string name)
         {
             return name.Remove(0, "minecraft:".Length);
@@ -99,6 +109,29 @@ namespace CuberiteScripts
                 .Select(itm => (format ? itm.Name.FormatNameNoPrefix() : itm.Name, (int)itm.Children().First().Children<JProperty>().First().Value)).ToList();
             return jsonBlocks;
         }
+
+        public static List<(string name, int protocol_id)> GetSounds(string file_path)
+        {
+            object? obj = JsonConvert.DeserializeObject(File.ReadAllText(file_path));
+            if (obj is not JObject jObject) return null;
+            var jsonBlocks = jObject.Children<JProperty>().ToList().Find(a => a.Name == "minecraft:sound_event").Children()
+                .ToList().Children().Cast<JProperty>().ToList().Find(a => a.Name == "entries").Children()
+                .ToList().Children().Cast<JProperty>().ToList()
+                .Select(itm => (itm.Name, (int)itm.Children().First().Children<JProperty>().First().Value)).ToList();
+            return jsonBlocks;
+        }
+
+        public static List<(string name, int protocol_id)> GetBlockEntities(string file_path)
+        {
+            object? obj = JsonConvert.DeserializeObject(File.ReadAllText(file_path));
+            if (obj is not JObject jObject) return null;
+            var jsonBlocks = jObject.Children<JProperty>().ToList().Find(a => a.Name == "minecraft:block_entity_type").Children()
+                .ToList().Children().Cast<JProperty>().ToList().Find(a => a.Name == "entries").Children()
+                .ToList().Children().Cast<JProperty>().ToList()
+                .Select(itm => (itm.Name.FormatNameNoPrefix(), (int)itm.Children().First().Children<JProperty>().First().Value)).ToList();
+            return jsonBlocks;
+        }
+
 
         public static List<(int id, List<(string state_name, string state_value)> corresponding_states)> GetAllBlockStates(JProperty? block_states)
         {
