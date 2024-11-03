@@ -290,7 +290,7 @@ namespace CuberiteScripts
                             {
                                 EntryType.Enum => entry.name.FormatName() + $"::{v.FormatName()}",
                                 EntryType.Int => v,
-                                EntryType.Bool => v == "True" ? entry.name.FormatName() : $"!{entry.name.FormatName()}",
+                                EntryType.Bool => v == "True" ? "true" : "false",
                                 EntryType.Facing => "eBlockFace::" + v,
                                 _ => throw new Exception("unknown"),
                             };
