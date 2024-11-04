@@ -105,7 +105,7 @@ namespace CuberiteScripts
                             args += "enum " + blockState.name.FormatName() + " ";
                             break;
                         case EntryType.Int:
-                            args += "int ";
+                            args += "unsigned char ";
                             break;
                         case EntryType.Facing:
                             args += "eBlockFace ";
@@ -142,7 +142,7 @@ namespace CuberiteScripts
                             curr += "enum " + blockState.name.FormatName() + " ";
                             break;
                         case EntryType.Int:
-                            curr += "int ";
+                            curr += "unsigned char ";
                             break;
                         case EntryType.Facing:
                             curr += "eBlockFace ";
@@ -243,7 +243,7 @@ namespace CuberiteScripts
                             curr += $"enum {blockState.name.FormatName()} ";
                             break;
                         case EntryType.Int:
-                            curr += "int ";
+                            curr += "unsigned char ";
                             break;
                         case EntryType.Facing:
                             curr += "eBlockFace ";
