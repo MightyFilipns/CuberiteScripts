@@ -95,7 +95,7 @@ namespace CuberiteScripts
                     if (!identical)
                     {
                         Utils.save($"\t\t\tcase {blockId}::{blockId}().ID: return {id};");
-                        continue;
+                        break;
                     }
                     string args = "";
                     correspondingStates.Sort((a, b) => string.Compare(a.state_name, b.state_name, StringComparison.Ordinal));

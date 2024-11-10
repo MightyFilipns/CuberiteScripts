@@ -32,7 +32,7 @@ namespace CuberiteScripts
             //GenerateRegistryDataWriter("E:\\minecraft-servers\\server-1-21-3\\generated\\data\\minecraft\\damage_type");
             //GenerateParticleMap();
             //block_state_printer.generateBlockStatesCPP("E:\\minecraft-servers\\server-1-21-3\\generated\\reports\\blocks.json");
-            block_state_printer.generateBlockStatesH("E:\\minecraft-servers\\server-1-21-3\\generated\\reports\\blocks.json");
+            //block_state_printer.generateBlockStatesH("E:\\minecraft-servers\\server-1-21-3\\generated\\reports\\blocks.json");
             //block_state_printer.BlockStateType("E:\\minecraft-servers\\server-1-21-3\\generated\\reports\\blocks.json");
             //ItemConverterGenerator.IdToItemConvGen("E:\\minecraft-servers\\server-1-21\\generated\\reports\\registries.json");
             //ItemConverterGenerator.ItemToIdConvGen("E:\\minecraft-servers\\server-1-21\\generated\\reports\\registries.json");
@@ -58,11 +58,11 @@ namespace CuberiteScripts
             //Misc.GenSpawnEggs("E:\\minecraft-servers\\server-1-21\\generated\\reports\\registries.json");
             //PacketIdGen.GenPacketIds("E:\\minecraft-servers\\server-1-21-3\\generated\\reports\\packets.json","play","serverbound");
             //Commands.PrintCommandParsers("E:\\minecraft-servers\\server-1.18\\generated\\reports\\registries.json");
-            //PaletteGenerator.CompletePaletteFileGen(
-            //    "E:\\minecraft-servers\\server-1-21-3\\generated\\reports\\blocks.json",
-            //    "E:\\minecraft-servers\\server-1-21-3\\generated\\reports\\registries.json",
-            //    "E:\\minecraft-servers\\server-1-21-3\\generated\\reports\\blocks.json",
-            //    "1.21.2");
+            PaletteGenerator.CompletePaletteFileGen(
+                "E:\\minecraft-servers\\server-1-20-1\\generated\\reports\\blocks.json",
+                "E:\\minecraft-servers\\server-1-20-1\\generated\\reports\\registries.json",
+                "E:\\minecraft-servers\\server-1-21-3\\generated\\reports\\blocks.json",
+                "1.20");
             //Misc.ListSounds("E:\\minecraft-servers\\server-1-21\\generated\\reports\\registries.json");
             //BlockTags.PrintBlockTagH("E:\\minecraft-servers\\server-1-21-3\\generated\\data\\minecraft\\tags\\block\\");
             //BlockTags.PrintBlockTagCpp("E:\\minecraft-servers\\server-1-21-3\\generated\\data\\minecraft\\tags\\block\\");
