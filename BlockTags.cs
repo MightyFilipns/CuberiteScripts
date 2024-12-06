@@ -20,27 +20,48 @@ namespace CuberiteScripts
                 var ref_totag = blockTag.values.Where(a => a[0] == '#').ToList();
                 var tags = blockTag.values.Where(a => a[0] != '#').ToList();
                 string tag_name = fileInfo.Name.Replace(".json", "").FormatName();
-                Console.WriteLine($"bool {tag_name}(BlockType a_block)\n{{");
-                foreach (var se in ref_totag)
+                Utils.save($"bool {tag_name}(BlockType a_block)\n{{");
+                if (tags.Count == 0 && ref_totag.Count > 0)
                 {
-                    Console.WriteLine($"\tif ({se.FormatNameNoPrefixTag()}(a_block)) {{ return true; }}");
-                   
-                }
-
-                if (tags.Count > 0)
-                {
-                    Console.WriteLine("\tswitch(a_block) {");
-                    PrintTagsSwitch(tags);
-                    Console.WriteLine("\t\t\treturn true;");
-                    Console.WriteLine("\t\tdefault: return false;");
-                    Console.WriteLine("\t}");
+                    Utils.save($"\treturn {BuildExpression(ref_totag)};");
                 }
                 else
                 {
-                    Console.WriteLine("\treturn false;");
+                    if (ref_totag.Count != 0)
+                    {
+                        string expr = ref_totag.First().FormatNameNoPrefixTag() + "(a_block)";
+                        foreach (var se in ref_totag.Skip(1))
+                        {
+                            expr += " || " + se.FormatNameNoPrefixTag() + "(a_block)";
+                        }
+                        Utils.save($"\tif ({expr})\n\t{{\n\t\treturn true;\n\t}}");
+                    }
+                    if (tags.Count > 0)
+                    {
+                        Utils.save("\tswitch (a_block)\n\t{");
+                        PrintTagsSwitch(tags);
+                        Utils.save("\t\t\treturn true;");
+                        Utils.save("\t\tdefault: return false;");
+                        Utils.save("\t}");
+                    }
+                    else
+                    {
+                        Utils.save("\treturn false;");
+                    }
                 }
-                Console.WriteLine("}");
+                Utils.save("}");
             }
+            Utils.SaveToFile();
+        }
+
+        static string BuildExpression(List<string> ref_tags)
+        {
+            string expr = ref_tags.First().FormatNameNoPrefixTag() + "(a_block)";
+            foreach (var se in ref_tags.Skip(1))
+            {
+                expr += " || " + se.FormatNameNoPrefixTag() + "(a_block)";
+            }
+            return expr;
         }
 
         public static void PrintBlockTagH(string folder_path)
@@ -54,7 +75,7 @@ namespace CuberiteScripts
                 //var ref_totag = blockTag.values.Where(a => a[0] == '#').ToList();
                 //var tags = blockTag.values.Where(a => a[0] != '#').ToList();
                 string tag_name = fileInfo.Name.Replace(".json", "").FormatName();
-                Console.WriteLine($"bool {tag_name}(BlockType a_block);");
+                Utils.save($"bool {tag_name}(BlockType a_block);");
             }
         }
 
@@ -63,7 +84,7 @@ namespace CuberiteScripts
         {
             foreach (var block in blocks)
             {
-                Console.WriteLine($"\t\tcase BlockType::{block.FormatNameNoPrefix()}:");
+                Utils.save($"\t\tcase BlockType::{block.FormatNameNoPrefix()}:");
             }
         }
 
