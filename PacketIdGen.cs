@@ -12,7 +12,7 @@ namespace CuberiteScripts
     {
         public static void GenPacketIds(string orignal_path,string phase_name, string bound_to)
         {
-            bool print_ids = true;
+            bool print_ids = false;
 
             var old_packt = GetPackets(orignal_path, phase_name, bound_to);
             old_packt.Sort((a,b) => a.protocol_id - b.protocol_id);

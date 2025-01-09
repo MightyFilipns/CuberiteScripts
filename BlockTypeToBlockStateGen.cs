@@ -14,8 +14,9 @@ namespace CuberiteScripts
             int max_name_len = blocks.Max(a => a.Length);
             foreach (var block in blocks)
             {
-                Utils.save($"\t\t\tcase BlockType::{block}:{Utils.Spacing(max_name_len-block.Length)} return {block}::{block}().ID;");
+                Utils.save($"\t\t\tcase BlockType::{block}:{Utils.Spacing(max_name_len - block.Length)} return {block}::{block}().ID;");
             }
+            Utils.SaveToFile();
         }
     }
 }

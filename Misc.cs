@@ -20,8 +20,9 @@ namespace CuberiteScripts
                 .Select(itm => itm.Name.FormatNameNoPrefix()).ToList();
             foreach (var item in Items)
             {
-                Console.WriteLine($"\t{item},");
+                Utils.save($"\t{item},");
             }
+            Utils.SaveToFile();
         }
 
         public static void ListBlocks(string data_path)
@@ -53,8 +54,9 @@ namespace CuberiteScripts
             int max = eggs.Max(a => a.Length);
             foreach (var egg in eggs)
             {
-                Console.WriteLine($"case Item::{egg}:{Utils.Spacing(max-egg.Length)} return mt{egg.Remove(egg.IndexOf("SpawnEgg"),"SpawnEgg".Length)};");   
+                Utils.save($"case Item::{egg}:{Utils.Spacing(max-egg.Length)} return mt{egg.Remove(egg.IndexOf("SpawnEgg"),"SpawnEgg".Length)};");   
             }
+            Utils.SaveToFile();
         }
 
         public static void GenBlockEntities(string file_path)

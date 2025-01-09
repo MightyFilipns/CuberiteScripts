@@ -31,38 +31,39 @@ namespace CuberiteScripts
 
             //GenerateRegistryDataWriter("E:\\minecraft-servers\\server-1-21-3\\generated\\data\\minecraft\\damage_type");
             //GenerateParticleMap();
-            //block_state_printer.generateBlockStatesCPP("E:\\minecraft-servers\\server-1-21-3\\generated\\reports\\blocks.json");
-            //block_state_printer.generateBlockStatesH("E:\\minecraft-servers\\server-1-21-3\\generated\\reports\\blocks.json");
-            //block_state_printer.BlockStateType("E:\\minecraft-servers\\server-1-21-3\\generated\\reports\\blocks.json");
+            //block_state_printer.generateBlockStatesCPP("E:\\minecraft-servers\\server-1-21-4\\generated\\reports\\blocks.json");
+            //block_state_printer.generateBlockStatesH("E:\\minecraft-servers\\server-1-21-4\\generated\\reports\\blocks.json");
+            //block_state_printer.BlockStateType("E:\\minecraft-servers\\server-1-21-4\\generated\\reports\\blocks.json");
             //ItemConverterGenerator.IdToItemConvGen("E:\\minecraft-servers\\server-1-21\\generated\\reports\\registries.json");
             //ItemConverterGenerator.ItemToIdConvGen("E:\\minecraft-servers\\server-1-21\\generated\\reports\\registries.json");
             //PaletteGenerator.GeneratePalette("E:\\minecraft-servers\\server-1-21-3\\generated\\reports\\blocks.json", "E:\\minecraft-servers\\server-1-21-3\\generated\\reports\\blocks.json");
-            //NamespaceSerializerGen.GenerateItemToString("E:\\minecraft-servers\\server-1-21\\generated\\reports\\registries.json");
-            //NamespaceSerializerGen.GenerateStringToItemMap("E:\\minecraft-servers\\server-1-21\\generated\\reports\\registries.json");
-            //NamespaceSerializerGen.GenerateBlockToString("E:\\minecraft-servers\\server-1-21\\generated\\reports\\blocks.json");
-            //NamespaceSerializerGen.GenerateStringToBlockMap("E:\\minecraft-servers\\server-1-21\\generated\\reports\\blocks.json");
-            //NamespaceSerializerGen.GenerateCustomStateToString("E:\\minecraft-servers\\server-1-21\\generated\\reports\\registries.json");
-            //NamespaceSerializerGen.GenerateStringToCustomStatkMap("E:\\minecraft-servers\\server-1-21\\generated\\reports\\registries.json");
-            //Misc.ListStats("E:\\minecraft-servers\\server-1-21\\generated\\reports\\registries.json");
-            //Misc.ListBlocks("E:\\minecraft-servers\\server-1-21-3\\generated\\reports\\blocks.json");
-            //ItemBlockConverterGenerator.GenerateItemToBlockConverter("E:\\minecraft-servers\\server-1-21-3\\generated\\reports");
-            //ItemBlockConverterGenerator.GenerateBlockToItemConverter("E:\\minecraft-servers\\server-1-21-3\\generated\\reports");
+            //NamespaceSerializerGen.GenerateItemToString("E:\\minecraft-servers\\server-1-21-4\\generated\\reports\\registries.json");
+            //NamespaceSerializerGen.GenerateStringToItemMap("E:\\minecraft-servers\\server-1-21-4\\generated\\reports\\registries.json");
+            //NamespaceSerializerGen.GenerateBlockToString("E:\\minecraft-servers\\server-1-21-4\\generated\\reports\\blocks.json");
+            //NamespaceSerializerGen.GenerateStringToBlockMap("E:\\minecraft-servers\\server-1-21-4\\generated\\reports\\blocks.json");
+            //NamespaceSerializerGen.GenerateCustomStateToString("E:\\minecraft-servers\\server-1-21-4\\generated\\reports\\registries.json");
+            //NamespaceSerializerGen.GenerateStringToCustomStatkMap("E:\\minecraft-servers\\server-1-21-4\\generated\\reports\\registries.json");
+            //Misc.ListStats("E:\\minecraft-servers\\server-1-21-4\\generated\\reports\\registries.json");
+            //Misc.ListBlocks("E:\\minecraft-servers\\server-1-21-4\\generated\\reports\\blocks.json");
+            //ItemBlockConverterGenerator.GenerateItemToBlockConverter("E:\\minecraft-servers\\server-1-21-4\\generated\\reports");
+            //ItemBlockConverterGenerator.GenerateBlockToItemConverter("E:\\minecraft-servers\\server-1-21-4\\generated\\reports");
             //PaletteGenerator.GenerateCustomStats("E:\\minecraft-servers\\server-1-21\\generated\\reports\\registries.json");
-            //Misc.ListItems("E:\\minecraft-servers\\server-1-21-3\\generated\\reports\\registries.json");
-            //BlockTypeToBlockStateGen.Generate("E:\\minecraft-servers\\server-1-21\\generated\\reports\\blocks.json");
-            //HandlerGen.GenerateItemToHandler("E:\\minecraft-servers\\server-1-21\\generated\\reports\\registries.json");
-            //HandlerGen.GenerateItemHandlers("E:\\minecraft-servers\\server-1-21\\generated\\reports\\items.json", "E:\\minecraft-servers\\server-1-21\\generated\\reports\\blocks.json");
-            //HandlerGen.GenerateMaxStackSize("E:\\minecraft-servers\\server-1-21\\generated\\reports\\items.json");
-            //HandlerGen.GenerateBlockHandlers("E:\\minecraft-servers\\server-1-21\\generated\\reports\\blocks.json");
-            //HandlerGen.GenerateBlockToHandler("E:\\minecraft-servers\\server-1-21\\generated\\reports\\blocks.json");
-            //Misc.GenSpawnEggs("E:\\minecraft-servers\\server-1-21\\generated\\reports\\registries.json");
-            //PacketIdGen.GenPacketIds("E:\\minecraft-servers\\server-1-21-3\\generated\\reports\\packets.json","play","serverbound");
+            //Misc.ListItems("E:\\minecraft-servers\\server-1-21-4\\generated\\reports\\registries.json");
+            //BlockTypeToBlockStateGen.Generate("E:\\minecraft-servers\\server-1-21-4\\generated\\reports\\blocks.json");
+            //HandlerGen.GenerateItemToHandler("E:\\minecraft-servers\\server-1-21-4\\generated\\reports\\registries.json");
+            //HandlerGen.GenerateItemHandlers("E:\\minecraft-servers\\server-1-21-4\\generated\\reports\\items.json", "E:\\minecraft-servers\\server-1-21-4\\generated\\reports\\blocks.json");
+            //HandlerGen.GenerateMaxStackSize("E:\\minecraft-servers\\server-1-21-4\\generated\\reports\\items.json");
+            //HandlerGen.GenerateBlockHandlers("E:\\minecraft-servers\\server-1-21-4\\generated\\reports\\blocks.json");
+            //HandlerGen.GenerateBlockToHandler("E:\\minecraft-servers\\server-1-21-4\\generated\\reports\\blocks.json");
+            //Misc.GenSpawnEggs("E:\\minecraft-servers\\server-1-21-4\\generated\\reports\\registries.json");
+            //PacketIdGen.GenPacketIds("E:\\minecraft-servers\\server-1-21-3\\generated\\reports\\packets.json","play","clientbound");
             //Commands.PrintCommandParsers("E:\\minecraft-servers\\server-1.18\\generated\\reports\\registries.json");
-            PaletteGenerator.CompletePaletteFileGen(
-                "E:\\minecraft-servers\\server-1-20-1\\generated\\reports\\blocks.json",
-                "E:\\minecraft-servers\\server-1-20-1\\generated\\reports\\registries.json",
-                "E:\\minecraft-servers\\server-1-21-3\\generated\\reports\\blocks.json",
-                "1.20");
+            //PaletteGenerator.CompletePaletteFileGen(
+            //    "E:\\minecraft-servers\\server-1-21-4\\generated\\reports\\blocks.json",
+            //    "E:\\minecraft-servers\\server-1-21-4\\generated\\reports\\registries.json",
+            //    "E:\\minecraft-servers\\server-1-21-4\\generated\\reports\\blocks.json",
+            //    "1.21.4",
+            //    false);
             //Misc.ListSounds("E:\\minecraft-servers\\server-1-21\\generated\\reports\\registries.json");
             //BlockTags.PrintBlockTagH("E:\\minecraft-servers\\server-1-21-3\\generated\\data\\minecraft\\tags\\block\\");
             //BlockTags.PrintBlockTagCpp("E:\\minecraft-servers\\server-1-21-3\\generated\\data\\minecraft\\tags\\block\\");

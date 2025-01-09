@@ -44,6 +44,7 @@ namespace CuberiteScripts
 
             var blocks = Utils.GetBlocksFromJson(blocks_file);
             int max = 45;
+            existing.Add("/t  //  -- new starts here");
             foreach (var (jToken, name) in jsonBlocks)
             {
                 if (processed.All(a => a.ItemName != name.FormatNameNoPrefix()))
@@ -136,8 +137,9 @@ namespace CuberiteScripts
             int max = items.Max(a => a.Length);
             foreach (var item in items)
             {
-                Console.WriteLine($"\t\t\tcase Item::{item}:{Utils.Spacing(max-item.Length)} return Item{item}Handler;");
+                Utils.save($"\t\t\tcase Item::{item}:{Utils.Spacing(max-item.Length)} return Item{item}Handler;");
             }
+            Utils.SaveToFile();
         }
 
         public static void GenerateMaxStackSize(string file_path)
@@ -149,13 +151,13 @@ namespace CuberiteScripts
             foreach (var (item_root, name) in jsonBlocks)
             {
                 var stack_size = (int)item_root["components"]["minecraft:max_stack_size"];
-                if (stack_size == 1)
+                if (stack_size is 1 or 64)
                 {
                     continue;
                 }
                 Utils.save($"case Item::{name.FormatNameNoPrefix()}:{Utils.Spacing(max-name.FormatNameNoPrefix().Length)} return {stack_size};");
             }
-            int b = 0;
+            Utils.SaveToFile();
         }
 
         public static void GenerateBlockHandlers(string file_path)
@@ -183,6 +185,7 @@ namespace CuberiteScripts
                 string type = GetConstructor(se);
                 Utils.save($"\tconstexpr {type}{Utils.Spacing(45-type.Length)} Block{se}Handler(BlockType::{se});");
             }
+            Utils.SaveToFile();
 
             string GetConstructor(string name)
             {
@@ -236,8 +239,9 @@ namespace CuberiteScripts
             int max = items.Max(a => a.Length);
             foreach (var item in items)
             {
-                Console.WriteLine($"\t\t\tcase BlockType::{item}:{Utils.Spacing(max - item.Length)} return Block{item}Handler;");
+                Utils.save($"\t\t\tcase BlockType::{item}:{Utils.Spacing(max - item.Length)} return Block{item}Handler;");
             }
+            Utils.SaveToFile();
         }
     }
 }
