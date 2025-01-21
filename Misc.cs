@@ -80,5 +80,17 @@ namespace CuberiteScripts
                 Console.WriteLine($"{{ \"{name_no_prefix}\",{Utils.Spacing(max - name_no_prefix.Length)}{protocolId} }},");
             }
         }
+
+        public static void ListSoundsEnum(string data_path)
+        {
+            var sounds = Utils.GetSounds(data_path);
+            int max = sounds.Max(a => a.name.Length - "minecraft:".Length);
+            foreach (var (name, protocolId) in sounds)
+            {
+                string name_no_prefix = name.Remove(0, "minecraft:".Length);
+                //Console.WriteLine($"{{ \"{name_no_prefix}\",{Utils.Spacing(max - name_no_prefix.Length)}{protocolId} }},");
+                Console.WriteLine($"{name.FormatNameNoPrefixSound()},");
+            }
+        }
     }
 }

@@ -54,6 +54,15 @@ namespace CuberiteScripts
                 return strb.ToString();
             }).ToList().Aggregate((s1, s2) => s1 + s2);
         }
+        public static string FormatNameNoPrefixSound(this string name)
+        {
+            return name.Remove(0, "minecraft:".Length).Split(".").Select(a =>
+            {
+                StringBuilder strb = new(a);
+                strb[0] = char.ToUpper(strb[0]);
+                return strb.ToString();
+            }).ToList().Aggregate((s1, s2) => s1 + s2).FormatName();
+        }
 
         public static string RemovePrefix(this string name)
         {

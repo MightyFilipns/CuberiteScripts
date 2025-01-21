@@ -68,6 +68,8 @@ namespace CuberiteScripts
             //BlockTags.PrintBlockTagH("E:\\minecraft-servers\\server-1-21-3\\generated\\data\\minecraft\\tags\\block\\");
             //BlockTags.PrintBlockTagCpp("E:\\minecraft-servers\\server-1-21-3\\generated\\data\\minecraft\\tags\\block\\");
             //Misc.GenBlockEntities("E:\\minecraft-servers\\server-1-21\\generated\\reports\\registries.json");
+            //Misc.ListSoundsEnum("E:\\minecraft-servers\\server-1-21\\generated\\reports\\registries.json");
+            //Sounds.EnumToString("E:\\minecraft-servers\\server-1-21\\generated\\reports\\registries.json");
 
             //idtransform(old =>
             //{
