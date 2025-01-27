@@ -60,16 +60,18 @@ namespace CuberiteScripts
                         else if (arr.Contains("North") && arr.Contains("South") && arr.Contains("East") && arr.Contains("West") )
                         {
                             type = EntryType.Facing;
-                            var old_arr = arr.Select(a => a);
-                            arr = ["BLOCK_FACE_ZM", "BLOCK_FACE_ZP", "BLOCK_FACE_XM", "BLOCK_FACE_XP"];
-                            if (old_arr.Contains("Up"))
-                            {
-                                arr.Add("BLOCK_FACE_YP");
-                            }
-                            if (old_arr.Contains("Down"))
-                            {
-                                arr.Add("BLOCK_FACE_YM");
-                            }
+                            arr = arr.Select(Utils.TransEnum).ToList();
+                            //var old_arr = arr.Select(a => a);
+                            //arr = ["BLOCK_FACE_ZM", "BLOCK_FACE_ZP", "BLOCK_FACE_XM", "BLOCK_FACE_XP"];
+                            //if (old_arr.Contains("Up"))
+                            //{
+                            //    arr.Add("BLOCK_FACE_YP");
+                            //}
+                            //if (old_arr.Contains("Down"))
+                            //{
+                            //    arr.Add("BLOCK_FACE_YM");
+                            //}
+                            //arr.Sort((a,b) => string.CompareOrdinal(Utils.TransEnum(a), Utils.TransEnum(b)));
                         }
 
                         if (type == EntryType.Enum)
@@ -198,16 +200,18 @@ namespace CuberiteScripts
                         else if (arr.Contains("North") && arr.Contains("South") && arr.Contains("East") && arr.Contains("West"))
                         {
                             type = EntryType.Facing;
-                            var old_arr = arr.Select(a=>a);
-                            arr = ["BLOCK_FACE_ZM", "BLOCK_FACE_ZP", "BLOCK_FACE_XM", "BLOCK_FACE_XP"];
-                            if (old_arr.Contains("Up"))
-                            {
-                                arr.Add("BLOCK_FACE_YP");
-                            }
-                            if (old_arr.Contains("Down"))
-                            {
-                                arr.Add("BLOCK_FACE_YM");
-                            }
+                            //var old_arr = arr.Select(a=>a);
+                            //arr = ["BLOCK_FACE_ZM", "BLOCK_FACE_ZP", "BLOCK_FACE_XM", "BLOCK_FACE_XP"];
+                            arr = arr.Select(Utils.TransEnum).ToList();
+                            //if (old_arr.Contains("Up"))
+                            //{
+                            //    arr.Add("BLOCK_FACE_YP");
+                            //}
+                            //if (old_arr.Contains("Down"))
+                            //{
+                            //    arr.Add("BLOCK_FACE_YM");
+                            //}
+                            //arr.Sort((a,b) => string.CompareOrdinal(Utils.TransEnum(a), Utils.TransEnum(b)));
                         }
 
                         blockStates.Add((type, state_name, arr.ToList()));

@@ -188,5 +188,20 @@ namespace CuberiteScripts
 
             return per_state_id;
         }
+        public static string TransEnum(string input)
+        {
+            var str = input switch
+            {
+                "North" => "BLOCK_FACE_ZM",
+                "South" => "BLOCK_FACE_ZP",
+                "West" => "BLOCK_FACE_XM",
+                "East" => "BLOCK_FACE_XP",
+                "Up" => "BLOCK_FACE_YP",
+                "Down" => "BLOCK_FACE_YM",
+                _ => throw new Exception("Invalid data")
+            };
+            return str;
+        }
     }
+
 }
