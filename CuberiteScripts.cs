@@ -31,7 +31,7 @@ namespace CuberiteScripts
 
             //GenerateRegistryDataWriter("E:\\minecraft-servers\\server-1-21-3\\generated\\data\\minecraft\\damage_type");
             //GenerateParticleMap();
-            block_state_printer.generateBlockStatesCPP("E:\\minecraft-servers\\server-1-21-4\\generated\\reports\\blocks.json");
+            //block_state_printer.generateBlockStatesCPP("E:\\minecraft-servers\\server-1-21-4\\generated\\reports\\blocks.json");
             //block_state_printer.generateBlockStatesH("E:\\minecraft-servers\\server-1-21-4\\generated\\reports\\blocks.json");
             //block_state_printer.BlockStateType("E:\\minecraft-servers\\server-1-21-4\\generated\\reports\\blocks.json");
             //ItemConverterGenerator.IdToItemConvGen("E:\\minecraft-servers\\server-1-21\\generated\\reports\\registries.json");
@@ -67,7 +67,7 @@ namespace CuberiteScripts
             //Misc.ListSounds("E:\\minecraft-servers\\server-1-21\\generated\\reports\\registries.json");
             //BlockTags.PrintBlockTagH("E:\\minecraft-servers\\server-1-21-3\\generated\\data\\minecraft\\tags\\block\\");
             //BlockTags.PrintBlockTagCpp("E:\\minecraft-servers\\server-1-21-3\\generated\\data\\minecraft\\tags\\block\\");
-            //Misc.GenBlockEntities("E:\\minecraft-servers\\server-1-21\\generated\\reports\\registries.json");
+            //Misc.GenBlockEntities("E:\\minecraft-servers\\server-1-21-3\\generated\\reports\\registries.json");
             //Misc.ListSoundsEnum("E:\\minecraft-servers\\server-1-21\\generated\\reports\\registries.json");
             //Sounds.EnumToString("E:\\minecraft-servers\\server-1-21\\generated\\reports\\registries.json");
 

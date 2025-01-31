@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.VisualBasic;
 
 namespace CuberiteScripts
 {
@@ -151,7 +152,8 @@ namespace CuberiteScripts
             foreach (var (item_root, name) in jsonBlocks)
             {
                 var stack_size = (int)item_root["components"]["minecraft:max_stack_size"];
-                if (stack_size is 1 or 64)
+                var item_name = (string)item_root["components"]["minecraft:item_name"];
+                if ((stack_size is 1) || (stack_size == 64 && item_name.Contains("block")))
                 {
                     continue;
                 }

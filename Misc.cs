@@ -65,7 +65,7 @@ namespace CuberiteScripts
             int max = blocks.Max(a => a.name.Length);
             foreach (var block in blocks)
             {
-                Console.WriteLine($"case BlockType::{block.name}:{Utils.Spacing(max - block.name.Length)} Action = {block.protocol_id};");
+                Console.WriteLine($"case BlockType::{block.name}:{Utils.Spacing(max - block.name.Length)} Action = {block.protocol_id}; break;");
             }
         }
 
