@@ -68,7 +68,29 @@ namespace CuberiteScripts
                 Console.WriteLine($"case BlockType::{block.name}:{Utils.Spacing(max - block.name.Length)} Action = {block.protocol_id}; break;");
             }
         }
-
+        public static void EffectsToString(string file_path)
+        {
+            var blocks = Utils.GetEffects(file_path);
+            //blocks = blocks.Select((a => a with { name = "eff" + a.name.FormatNameNoPrefix() })).ToList();
+            blocks.Sort((a,b) => a.protocol_id - b.protocol_id);
+            int max = blocks.Max(a => ("eff" + a.name.FormatNameNoPrefix()).Length);
+            foreach (var block in blocks)
+            {
+                Console.WriteLine($"case cEntityEffect::eType::{"eff" + block.name.FormatNameNoPrefix()}:{Utils.Spacing(max - ("eff" + block.name.FormatNameNoPrefix()).Length)} return \"{block.name.Remove(0,"minecraft:".Length)}\";");
+            }
+        }
+        public static void StringToEffect(string file_path)
+        {
+            var blocks = Utils.GetEffects(file_path);
+            //blocks = blocks.Select((a => a with { name = "eff" + a.name.FormatNameNoPrefix() })).ToList();
+            blocks.Sort((a,b) => a.protocol_id - b.protocol_id);
+            int max = blocks.Max(a => a.name.RemovePrefix().Length);
+            foreach (var block in blocks)
+            {
+                string effname = block.name.RemovePrefix();
+                Console.WriteLine($"{{ \"{effname}\",{Utils.Spacing(max - effname.Length)} {"cEntityEffect::eType::eff" + block.name.FormatNameNoPrefix()}}},");
+            }
+        }
 
         public static void ListSounds(string data_path)
         {

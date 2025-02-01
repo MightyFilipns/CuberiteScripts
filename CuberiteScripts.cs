@@ -70,6 +70,8 @@ namespace CuberiteScripts
             //Misc.GenBlockEntities("E:\\minecraft-servers\\server-1-21-3\\generated\\reports\\registries.json");
             //Misc.ListSoundsEnum("E:\\minecraft-servers\\server-1-21\\generated\\reports\\registries.json");
             //Sounds.EnumToString("E:\\minecraft-servers\\server-1-21\\generated\\reports\\registries.json");
+            //Misc.EffectsToString("E:\\minecraft-servers\\server-1-21\\generated\\reports\\registries.json");
+            //Misc.StringToEffect("E:\\minecraft-servers\\server-1-21\\generated\\reports\\registries.json");
 
             //idtransform(old =>
             //{
