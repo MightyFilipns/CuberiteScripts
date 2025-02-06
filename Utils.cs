@@ -28,6 +28,10 @@ namespace CuberiteScripts
         }
         public static string FormatName(this string name)
         {
+            if (name == "")
+            {
+                return "";
+            }
             return name.Split("_").Select(a =>
             {
                 StringBuilder strb = new(a);
@@ -146,6 +150,40 @@ namespace CuberiteScripts
             object? obj = JsonConvert.DeserializeObject(File.ReadAllText(file_path));
             if (obj is not JObject jObject) return null;
             var jsonBlocks = jObject.Children<JProperty>().ToList().Find(a => a.Name == "minecraft:mob_effect").Children()
+                .ToList().Children().Cast<JProperty>().ToList().Find(a => a.Name == "entries").Children()
+                .ToList().Children().Cast<JProperty>().ToList()
+                .Select(itm => (itm.Name, (int)itm.Children().First().Children<JProperty>().First().Value)).ToList();
+            return jsonBlocks;
+        }
+
+        public static List<(string name, int protocol_id)> GetBlocks(string file_path)
+        {
+            object? obj = JsonConvert.DeserializeObject(File.ReadAllText(file_path));
+            if (obj is not JObject jObject) return null;
+            var jsonBlocks = jObject.Children<JProperty>().ToList().Find(a => a.Name == "minecraft:block").Children()
+                .ToList().Children().Cast<JProperty>().ToList().Find(a => a.Name == "entries").Children()
+                .ToList().Children().Cast<JProperty>().ToList()
+                .Select(itm => (itm.Name, (int)itm.Children().First().Children<JProperty>().First().Value)).ToList();
+            return jsonBlocks;
+        }
+
+
+        public static List<(string name, int protocol_id)> GetEntities(string file_path)
+        {
+            object? obj = JsonConvert.DeserializeObject(File.ReadAllText(file_path));
+            if (obj is not JObject jObject) return null;
+            var jsonBlocks = jObject.Children<JProperty>().ToList().Find(a => a.Name == "minecraft:entity_type").Children()
+                .ToList().Children().Cast<JProperty>().ToList().Find(a => a.Name == "entries").Children()
+                .ToList().Children().Cast<JProperty>().ToList()
+                .Select(itm => (itm.Name, (int)itm.Children().First().Children<JProperty>().First().Value)).ToList();
+            return jsonBlocks;
+        }
+
+        public static List<(string name, int protocol_id)> GetFluids(string file_path)
+        {
+            object? obj = JsonConvert.DeserializeObject(File.ReadAllText(file_path));
+            if (obj is not JObject jObject) return null;
+            var jsonBlocks = jObject.Children<JProperty>().ToList().Find(a => a.Name == "minecraft:fluid").Children()
                 .ToList().Children().Cast<JProperty>().ToList().Find(a => a.Name == "entries").Children()
                 .ToList().Children().Cast<JProperty>().ToList()
                 .Select(itm => (itm.Name, (int)itm.Children().First().Children<JProperty>().First().Value)).ToList();

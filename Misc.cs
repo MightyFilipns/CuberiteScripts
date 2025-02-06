@@ -114,5 +114,43 @@ namespace CuberiteScripts
                 Console.WriteLine($"{name.FormatNameNoPrefixSound()},");
             }
         }
+
+        public static void ListBlocksSwitch(string file_path)
+        {
+            var blocks = Utils.GetBlocks(file_path);
+            blocks.Sort((a,b) => a.protocol_id - b.protocol_id);
+            int max = blocks.Max(a => (a.name.FormatNameNoPrefix()).Length);
+            foreach (var block in blocks)
+            {
+                Console.WriteLine($"case BlockType::{block.name.FormatNameNoPrefix()}:{Utils.Spacing(max - (block.name.FormatNameNoPrefix()).Length)} return {block.protocol_id};");
+            }
+        }
+
+        public static void ListEntities(string file_path)
+        {
+            var blocks = Utils.GetEntities(file_path);
+            foreach (var block in blocks)
+            {
+                Console.WriteLine($"et{block.name.FormatNameNoPrefix()},");
+            }
+        }
+        public static void GenEntitiesTranslation(string file_path)
+        {
+            var blocks = Utils.GetEntities(file_path);
+            int max = blocks.Max(a => a.name.FormatNameNoPrefix().Length);
+            foreach (var block in blocks)
+            {
+                Console.WriteLine($"case Type::et{block.name.FormatNameNoPrefix()}:{Utils.Spacing(max - block.name.FormatNameNoPrefix().Length)} return {block.protocol_id};");
+            }
+        }
+
+        public static void ListFluids(string file_path)
+        {
+            var blocks = Utils.GetFluids(file_path);
+            foreach (var block in blocks)
+            {
+                Console.WriteLine($"{block.name.FormatNameNoPrefix()},");
+            }
+        }
     }
 }

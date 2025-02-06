@@ -63,7 +63,7 @@ namespace CuberiteScripts
             //    "E:\\minecraft-servers\\server-1-21-4\\generated\\reports\\registries.json",
             //    "E:\\minecraft-servers\\server-1-21-4\\generated\\reports\\blocks.json",
             //    "1.21.4",
-            //    false);
+            //    true);
             //Misc.ListSounds("E:\\minecraft-servers\\server-1-21\\generated\\reports\\registries.json");
             //BlockTags.PrintBlockTagH("E:\\minecraft-servers\\server-1-21-3\\generated\\data\\minecraft\\tags\\block\\");
             //BlockTags.PrintBlockTagCpp("E:\\minecraft-servers\\server-1-21-3\\generated\\data\\minecraft\\tags\\block\\");
@@ -72,6 +72,15 @@ namespace CuberiteScripts
             //Sounds.EnumToString("E:\\minecraft-servers\\server-1-21\\generated\\reports\\registries.json");
             //Misc.EffectsToString("E:\\minecraft-servers\\server-1-21\\generated\\reports\\registries.json");
             //Misc.StringToEffect("E:\\minecraft-servers\\server-1-21\\generated\\reports\\registries.json");
+            //Tags.ListTags("E:\\minecraft-servers\\server-1-21\\generated\\data\\minecraft\\tags\\fluid");
+            //Tags.PrintTagTrans("E:\\minecraft-servers\\server-1-21\\generated\\data\\minecraft\\tags\\fluid","FluidTags");
+            //Misc.ListBlocksSwitch("E:\\minecraft-servers\\server-1-21\\generated\\reports\\registries.json");
+            //Misc.ListEntities("E:\\minecraft-servers\\server-1-21-4\\generated\\reports\\registries.json");
+            //Misc.GenEntitiesTranslation("E:\\minecraft-servers\\server-1.17\\generated\\reports\\registries.json");
+            //Misc.ListFluids("E:\\minecraft-servers\\server-1-21-4\\generated\\reports\\registries.json");
+            //FluidGen.StringToFluid("E:\\minecraft-servers\\server-1-21-4\\generated\\reports\\registries.json");
+            //FluidGen.FluidToString("E:\\minecraft-servers\\server-1-21-4\\generated\\reports\\registries.json");
+            FluidGen.FluidToProtocol("E:\\minecraft-servers\\server-1-21-4\\generated\\reports\\registries.json");
 
             //idtransform(old =>
             //{
