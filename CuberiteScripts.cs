@@ -14,13 +14,13 @@ namespace CuberiteScripts
     {
         static string tosavefile = "C:\\Users\\Filip\\Desktop\\states.txt";
         static string tosavefile2 = "C:\\Users\\Filip\\Desktop\\tostring.txt";
-        /* Uncomment the function you want to use here*/
+        /* Uncomment the function you want to use here */
         static void Main(string[] args)
         {
             //genrateBlockStateConverter();
             //GenerateBlockStateWriter();
             //convert4();
-            //sortItemhdlByType();
+            //sortItemhdlByType();  
             //GenerateItemtoBlock();
             //sortpackets();
             //extractbl();
@@ -31,30 +31,31 @@ namespace CuberiteScripts
 
             //GenerateRegistryDataWriter("E:\\minecraft-servers\\server-1-21-3\\generated\\data\\minecraft\\damage_type");
             //GenerateParticleMap();
-            //block_state_printer.generateBlockStatesCPP("E:\\minecraft-servers\\server-1-21-4\\generated\\reports\\blocks.json");
-            //block_state_printer.generateBlockStatesH("E:\\minecraft-servers\\server-1-21-4\\generated\\reports\\blocks.json");
-            //block_state_printer.BlockStateType("E:\\minecraft-servers\\server-1-21-4\\generated\\reports\\blocks.json");
+            //block_state_printer.generateBlockStatesCPP("E:\\minecraft-servers\\server-1-21-5\\generated\\reports\\blocks.json");
+            //block_state_printer.generateBlockStatesH("E:\\minecraft-servers\\server-1-21-5\\generated\\reports\\blocks.json");
+            //block_state_printer.BlockStateType("E:\\minecraft-servers\\server-1-21-5\\generated\\reports\\blocks.json");
             //ItemConverterGenerator.IdToItemConvGen("E:\\minecraft-servers\\server-1-21\\generated\\reports\\registries.json");
             //ItemConverterGenerator.ItemToIdConvGen("E:\\minecraft-servers\\server-1-21\\generated\\reports\\registries.json");
             //PaletteGenerator.GeneratePalette("E:\\minecraft-servers\\server-1-21-3\\generated\\reports\\blocks.json", "E:\\minecraft-servers\\server-1-21-3\\generated\\reports\\blocks.json");
-            //NamespaceSerializerGen.GenerateItemToString("E:\\minecraft-servers\\server-1-21-4\\generated\\reports\\registries.json");
-            //NamespaceSerializerGen.GenerateStringToItemMap("E:\\minecraft-servers\\server-1-21-4\\generated\\reports\\registries.json");
-            //NamespaceSerializerGen.GenerateBlockToString("E:\\minecraft-servers\\server-1-21-4\\generated\\reports\\blocks.json");
-            //NamespaceSerializerGen.GenerateStringToBlockMap("E:\\minecraft-servers\\server-1-21-4\\generated\\reports\\blocks.json");
+            //NamespaceSerializerGen.GenerateItemToString("E:\\minecraft-servers\\server-1-21-5\\generated\\reports\\registries.json");
+            //NamespaceSerializerGen.GenerateStringToItemMap("E:\\minecraft-servers\\server-1-21-5\\generated\\reports\\registries.json");
+            //NamespaceSerializerGen.GenerateBlockToString("E:\\minecraft-servers\\server-1-21-5\\generated\\reports\\blocks.json");
+            //NamespaceSerializerGen.GenerateStringToBlockMap("E:\\minecraft-servers\\server-1-21-5\\generated\\reports\\blocks.json");
             //NamespaceSerializerGen.GenerateCustomStateToString("E:\\minecraft-servers\\server-1-21-4\\generated\\reports\\registries.json");
             //NamespaceSerializerGen.GenerateStringToCustomStatkMap("E:\\minecraft-servers\\server-1-21-4\\generated\\reports\\registries.json");
-            //Misc.ListStats("E:\\minecraft-servers\\server-1-21-4\\generated\\reports\\registries.json");
-            //Misc.ListBlocks("E:\\minecraft-servers\\server-1-21-4\\generated\\reports\\blocks.json");
-            //ItemBlockConverterGenerator.GenerateItemToBlockConverter("E:\\minecraft-servers\\server-1-21-4\\generated\\reports");
-            //ItemBlockConverterGenerator.GenerateBlockToItemConverter("E:\\minecraft-servers\\server-1-21-4\\generated\\reports");
+            //NamespaceSerializerGen.GenerateStringToEntityTypeMap("E:\\minecraft-servers\\server-1-21-5\\generated\\reports\\registries.json");
+            //Misc.ListStats("E:\\minecraft-servers\\server-1-21-5\\generated\\reports\\registries.json");
+            //Misc.ListBlocks("E:\\minecraft-servers\\server-1-21-5\\generated\\reports\\blocks.json");
+            //ItemBlockConverterGenerator.GenerateItemToBlockConverter("E:\\minecraft-servers\\server-1-21-5\\generated\\reports");
+            //ItemBlockConverterGenerator.GenerateBlockToItemConverter("E:\\minecraft-servers\\server-1-21-5\\generated\\reports");
             //PaletteGenerator.GenerateCustomStats("E:\\minecraft-servers\\server-1-21\\generated\\reports\\registries.json");
-            //Misc.ListItems("E:\\minecraft-servers\\server-1-21-4\\generated\\reports\\registries.json");
-            //BlockTypeToBlockStateGen.Generate("E:\\minecraft-servers\\server-1-21-4\\generated\\reports\\blocks.json");
-            //HandlerGen.GenerateItemToHandler("E:\\minecraft-servers\\server-1-21-4\\generated\\reports\\registries.json");
-            //HandlerGen.GenerateItemHandlers("E:\\minecraft-servers\\server-1-21-4\\generated\\reports\\items.json", "E:\\minecraft-servers\\server-1-21-4\\generated\\reports\\blocks.json");
-            //HandlerGen.GenerateMaxStackSize("E:\\minecraft-servers\\server-1-21-4\\generated\\reports\\items.json");
-            //HandlerGen.GenerateBlockHandlers("E:\\minecraft-servers\\server-1-21-4\\generated\\reports\\blocks.json");
-            //HandlerGen.GenerateBlockToHandler("E:\\minecraft-servers\\server-1-21-4\\generated\\reports\\blocks.json");
+            //Misc.ListItems("E:\\minecraft-servers\\server-1-21-5\\generated\\reports\\registries.json");
+            //BlockTypeToBlockStateGen.Generate("E:\\minecraft-servers\\server-1-21-5\\generated\\reports\\blocks.json");
+            //HandlerGen.GenerateItemToHandler("E:\\minecraft-servers\\server-1-21-5\\generated\\reports\\registries.json");
+            //HandlerGen.GenerateItemHandlers("E:\\minecraft-servers\\server-1-21-5\\generated\\reports\\items.json", "E:\\minecraft-servers\\server-1-21-5\\generated\\reports\\blocks.json");
+            //HandlerGen.GenerateMaxStackSize("E:\\minecraft-servers\\server-1-21-5\\generated\\reports\\items.json");
+            //HandlerGen.GenerateBlockHandlers("E:\\minecraft-servers\\server-1-21-5\\generated\\reports\\blocks.json");
+            //HandlerGen.GenerateBlockToHandler("E:\\minecraft-servers\\server-1-21-5\\generated\\reports\\blocks.json");
             //Misc.GenSpawnEggs("E:\\minecraft-servers\\server-1-21-4\\generated\\reports\\registries.json");
             //PacketIdGen.GenPacketIds("E:\\minecraft-servers\\server-1-21-3\\generated\\reports\\packets.json","play","clientbound");
             //Commands.PrintCommandParsers("E:\\minecraft-servers\\server-1.18\\generated\\reports\\registries.json");
@@ -74,37 +75,23 @@ namespace CuberiteScripts
             //Misc.StringToEffect("E:\\minecraft-servers\\server-1-21\\generated\\reports\\registries.json");
             //Tags.ListTags("E:\\minecraft-servers\\server-1-21\\generated\\data\\minecraft\\tags\\fluid");
             //Tags.PrintTagTrans("E:\\minecraft-servers\\server-1-21\\generated\\data\\minecraft\\tags\\fluid","FluidTags");
-            //Misc.ListBlocksSwitch("E:\\minecraft-servers\\server-1-21\\generated\\reports\\registries.json");
-            //Misc.ListEntities("E:\\minecraft-servers\\server-1-21-4\\generated\\reports\\registries.json");
-            //Misc.GenEntitiesTranslation("E:\\minecraft-servers\\server-1.17\\generated\\reports\\registries.json");
+            //Misc.ListBlocksSwitch("E:\\minecraft-servers\\server-1-21-5\\generated\\reports\\registries.json");
+            //Misc.ListEntities("E:\\minecraft-servers\\server-1-21-5\\generated\\reports\\registries.json");
+            //Misc.GenEntitiesTranslation("E:\\minecraft-servers\\server-1-21-5\\generated\\reports\\registries.json");
             //Misc.ListFluids("E:\\minecraft-servers\\server-1-21-4\\generated\\reports\\registries.json");
             //FluidGen.StringToFluid("E:\\minecraft-servers\\server-1-21-4\\generated\\reports\\registries.json");
             //FluidGen.FluidToString("E:\\minecraft-servers\\server-1-21-4\\generated\\reports\\registries.json");
-            FluidGen.FluidToProtocol("E:\\minecraft-servers\\server-1-21-4\\generated\\reports\\registries.json");
+            //FluidGen.FluidToProtocol("E:\\minecraft-servers\\server-1-21-4\\generated\\reports\\registries.json");
+
+            //ItemComponents.ListItemCompSwitch("/run/media/Filip/E_Volume/minecraft-servers/server-1-21-5/generated/reports/registries.json");
+            //ItemComponents.ListCompReaders("/run/media/Filip/E_Volume/minecraft-servers/server-1-21-3/generated/reports/registries.json");
+            ItemComponents.ListCompWriters("/run/media/Filip/E_Volume/minecraft-servers/server-1-21-3/generated/reports/registries.json");  
+            //ItemComponents.FindAllDefaultComponents("/run/media/Filip/E_Volume/minecraft-servers/server-1-21-5/generated/reports/items.json");
 
             //idtransform(old =>
             //{
             //    int toret = old;
-            //    if (old >= 32)
-            //    {
-            //        toret++;
-            //    }
-            //    if (old >= 50)
-            //    {
-            //        toret++;
-            //    }
-            //    if (old >= 68)
-            //    {
-            //        toret += 3;
-            //    }
-            //    if (old >= 100)
-            //    {
-            //        toret ++;
-            //    }
-            //    if (old >= 103)
-            //    {
-            //        toret++;
-            //    }
+            //    toret--;
             //    return toret;
             //});
         }

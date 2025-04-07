@@ -73,5 +73,16 @@ namespace CuberiteScripts
             }
             Utils.SaveToFile();
         }
+
+        public static void GenerateStringToEntityTypeMap(string file_path)
+        {
+            var items = Utils.GetEntities(file_path).Select(a => a.name);
+            int max = items.Max(a => a.Length);
+            foreach (var item in items)
+            {
+                Utils.save($"{{ \"{item.RemovePrefix()}\",{Utils.Spacing(max - item.Length)}et{item.FormatNameNoPrefix()} }},");
+            }
+            Utils.SaveToFile();
+        }
     }
 }

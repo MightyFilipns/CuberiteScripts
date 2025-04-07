@@ -48,6 +48,21 @@ namespace CuberiteScripts
                 return strb.ToString();
             }).ToList().Aggregate((s1, s2) => s1 + s2);
         }
+        
+        public static string FormatCompNameNoPrefix(this string name)
+        {
+            return name.Remove(0,"minecraft:".Length).Split("_").Select(a =>
+            {
+                StringBuilder strb = new(a);
+                strb[0] = char.ToUpper(strb[0]);
+                return strb.ToString();
+            }).ToList().Aggregate((s1, s2) => s1 + s2).Split("/").Select(a =>
+            {
+                StringBuilder strb = new(a);
+                strb[0] = char.ToUpper(strb[0]);
+                return strb.ToString();
+            }).ToList().Aggregate((s1, s2) => s1 + "_" +s2);
+        }
 
         public static string FormatNameNoPrefixTag(this string name)
         {
@@ -190,6 +205,16 @@ namespace CuberiteScripts
             return jsonBlocks;
         }
 
+        public static List<(string name, int protocol_id)> GetDataComponents(string file_path)
+        {
+            object? obj = JsonConvert.DeserializeObject(File.ReadAllText(file_path));
+            if (obj is not JObject jObject) return null;
+            var jsonBlocks = jObject.Children<JProperty>().ToList().Find(a => a.Name == "minecraft:data_component_type").Children()
+                .ToList().Children().Cast<JProperty>().ToList().Find(a => a.Name == "entries").Children()
+                .ToList().Children().Cast<JProperty>().ToList()
+                .Select(itm => (itm.Name, (int)itm.Children().First().Children<JProperty>().First().Value)).ToList();
+            return jsonBlocks;
+        }
 
         public static List<(int id, List<(string state_name, string state_value)> corresponding_states)> GetAllBlockStates(JProperty? block_states)
         {

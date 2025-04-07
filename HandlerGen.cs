@@ -152,8 +152,8 @@ namespace CuberiteScripts
             foreach (var (item_root, name) in jsonBlocks)
             {
                 var stack_size = (int)item_root["components"]["minecraft:max_stack_size"];
-                var item_name = (string)item_root["components"]["minecraft:item_name"];
-                if ((stack_size is 1) || (stack_size == 64 && item_name.Contains("block")))
+               // var item_name = (string)item_root["components"]["minecraft:item_name"];
+                if ((stack_size is 1) || (stack_size == 64 && name.Contains("block")))  // TODO: check if it is a block properly
                 {
                     continue;
                 }

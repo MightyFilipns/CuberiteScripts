@@ -140,7 +140,7 @@ namespace CuberiteScripts
             int max = blocks.Max(a => a.name.FormatNameNoPrefix().Length);
             foreach (var block in blocks)
             {
-                Console.WriteLine($"case Type::et{block.name.FormatNameNoPrefix()}:{Utils.Spacing(max - block.name.FormatNameNoPrefix().Length)} return {block.protocol_id};");
+                Console.WriteLine($"case eEntityType::et{block.name.FormatNameNoPrefix()}:{Utils.Spacing(max - block.name.FormatNameNoPrefix().Length)} return {block.protocol_id};");
             }
         }
 
